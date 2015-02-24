@@ -1,4 +1,4 @@
-CTools Native Android
+CTools Native iOS
 ===========================
 A cross platform native app which interfaces with CTools for iOS and Android.
 
