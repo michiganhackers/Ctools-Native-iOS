@@ -16,7 +16,7 @@ class TableViewController: UITableViewController, UINavigationControllerDelegate
     }
     
     override func viewDidLoad () {
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -24,5 +24,9 @@ class TableViewController: UITableViewController, UINavigationControllerDelegate
         let classItem = classes.classList[indexPath.row]
         cell.textLabel!.text = classItem.name
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let cell = sender as UITableViewCell
     }
 }

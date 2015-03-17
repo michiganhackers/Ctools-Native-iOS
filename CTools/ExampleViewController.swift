@@ -9,7 +9,12 @@
 import UIKit
 
 class ExampleViewController: UITableViewController {
+    var name:String?
+    
     override func viewDidLoad() {
-        self.navigationController?.title = "K den dis shit worked doe"
+        if var hi = self.navigationController? {
+            NSLog("kden")
+            hi.title = "kden"
+        }
     }
 }
