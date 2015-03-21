@@ -8,15 +8,15 @@
 
 import Foundation
 
-class ClassItemManager {
-    var classList = [ClassItem]();
+class CourseManager {
+    var courseList = [Course]()
     
     init () {
-        var blah = ClassItem(name:"Slavic 150")
-        var blah2 = ClassItem(name:"BishCOM 250")
+        var blah = Course(name:"Slavic 150")
+        var blah2 = Course(name:"BishCOM 250")
         
-        classList.append(blah)
-        classList.append(blah2)
+        courseList.append(blah)
+        courseList.append(blah2)
     }
     
     // this is where you will do all the initialization bullshit and what not

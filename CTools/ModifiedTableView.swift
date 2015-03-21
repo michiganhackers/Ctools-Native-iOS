@@ -10,7 +10,11 @@ import UIKit
 
 class ModifiedTableView: UITableViewController {
     
-    @IBAction func unwindToSpecificTab (segue: UIStoryboardSegue) {
+    @IBAction func unwindFromCourseSelection (segue: UIStoryboardSegue) {
     
+    }
+    
+    @IBAction func unwindFromLoginWebView (segue: UIStoryboardSegue) {
+        
     }
 }

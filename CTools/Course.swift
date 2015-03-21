@@ -8,7 +8,7 @@
 
 import UIKIT
 
-class ClassItem {
+class Course {
     var name:String;
     
     // methods to set the info about classes and shit

@@ -14,8 +14,10 @@
 		9D6409F11AAE798F00D94B5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6409F01AAE798F00D94B5E /* Images.xcassets */; };
 		9D6409F41AAE798F00D94B5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6409F21AAE798F00D94B5E /* LaunchScreen.xib */; };
 		9D640A001AAE799000D94B5E /* CToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6409FF1AAE799000D94B5E /* CToolsTests.swift */; };
-		9DA4E4FD1AB484E200107743 /* ClassItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4E4FC1AB484E200107743 /* ClassItem.swift */; };
-		9DA4E4FF1AB4851500107743 /* ClassItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4E4FE1AB4851500107743 /* ClassItemManager.swift */; };
+		9D6EA3871ABDBB8800245E01 /* SignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EA3861ABDBB8800245E01 /* SignInManager.swift */; };
+		9D6EA38B1ABDD29B00245E01 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EA38A1ABDD29B00245E01 /* LoginViewController.swift */; };
+		9DA4E4FD1AB484E200107743 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4E4FC1AB484E200107743 /* Course.swift */; };
+		9DA4E4FF1AB4851500107743 /* CourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4E4FE1AB4851500107743 /* CourseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +42,10 @@
 		9D6409F91AAE799000D94B5E /* CToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6409FE1AAE799000D94B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6409FF1AAE799000D94B5E /* CToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CToolsTests.swift; sourceTree = "<group>"; };
-		9DA4E4FC1AB484E200107743 /* ClassItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassItem.swift; sourceTree = "<group>"; };
-		9DA4E4FE1AB4851500107743 /* ClassItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassItemManager.swift; sourceTree = "<group>"; };
+		9D6EA3861ABDBB8800245E01 /* SignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInManager.swift; sourceTree = "<group>"; };
+		9D6EA38A1ABDD29B00245E01 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9DA4E4FC1AB484E200107743 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		9DA4E4FE1AB4851500107743 /* CourseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +89,12 @@
 			children = (
 				9D6409E91AAE798F00D94B5E /* AppDelegate.swift */,
 				9D6409EB1AAE798F00D94B5E /* ViewController.swift */,
-				9DA4E4FC1AB484E200107743 /* ClassItem.swift */,
-				9DA4E4FE1AB4851500107743 /* ClassItemManager.swift */,
+				9DA4E4FC1AB484E200107743 /* Course.swift */,
+				9DA4E4FE1AB4851500107743 /* CourseManager.swift */,
 				9D0C9B0D1AB7BB4B005CD5AC /* ModifiedTableView.swift */,
 				9D6409ED1AAE798F00D94B5E /* Main.storyboard */,
+				9D6EA3861ABDBB8800245E01 /* SignInManager.swift */,
+				9D6EA38A1ABDD29B00245E01 /* LoginViewController.swift */,
 				9D6409F01AAE798F00D94B5E /* Images.xcassets */,
 				9D6409F21AAE798F00D94B5E /* LaunchScreen.xib */,
 				9D6409E71AAE798F00D94B5E /* Supporting Files */,
@@ -221,11 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6EA38B1ABDD29B00245E01 /* LoginViewController.swift in Sources */,
 				9D0C9B0E1AB7BB4B005CD5AC /* ModifiedTableView.swift in Sources */,
 				9D6409EC1AAE798F00D94B5E /* ViewController.swift in Sources */,
-				9DA4E4FF1AB4851500107743 /* ClassItemManager.swift in Sources */,
+				9DA4E4FF1AB4851500107743 /* CourseManager.swift in Sources */,
+				9D6EA3871ABDBB8800245E01 /* SignInManager.swift in Sources */,
 				9D6409EA1AAE798F00D94B5E /* AppDelegate.swift in Sources */,
-				9DA4E4FD1AB484E200107743 /* ClassItem.swift in Sources */,
+				9DA4E4FD1AB484E200107743 /* Course.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
