@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D0C9B0E1AB7BB4B005CD5AC /* ModifiedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C9B0D1AB7BB4B005CD5AC /* ModifiedTableView.swift */; };
+		9D3171C71AC0EC0D00C90D05 /* DataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3171C61AC0EC0D00C90D05 /* DataRequester.swift */; };
 		9D6409EA1AAE798F00D94B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6409E91AAE798F00D94B5E /* AppDelegate.swift */; };
 		9D6409EC1AAE798F00D94B5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6409EB1AAE798F00D94B5E /* ViewController.swift */; };
 		9D6409EF1AAE798F00D94B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6409ED1AAE798F00D94B5E /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		9D0C9B0D1AB7BB4B005CD5AC /* ModifiedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiedTableView.swift; sourceTree = "<group>"; };
+		9D3171C61AC0EC0D00C90D05 /* DataRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequester.swift; sourceTree = "<group>"; };
 		9D6409E41AAE798F00D94B5E /* CTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6409E81AAE798F00D94B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6409E91AAE798F00D94B5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				9D0C9B0D1AB7BB4B005CD5AC /* ModifiedTableView.swift */,
 				9D6409ED1AAE798F00D94B5E /* Main.storyboard */,
 				9D6EA3861ABDBB8800245E01 /* SignInManager.swift */,
+				9D3171C61AC0EC0D00C90D05 /* DataRequester.swift */,
 				9D6EA38A1ABDD29B00245E01 /* LoginViewController.swift */,
 				9D6409F01AAE798F00D94B5E /* Images.xcassets */,
 				9D6409F21AAE798F00D94B5E /* LaunchScreen.xib */,
@@ -231,6 +234,7 @@
 				9D0C9B0E1AB7BB4B005CD5AC /* ModifiedTableView.swift in Sources */,
 				9D6409EC1AAE798F00D94B5E /* ViewController.swift in Sources */,
 				9DA4E4FF1AB4851500107743 /* CourseManager.swift in Sources */,
+				9D3171C71AC0EC0D00C90D05 /* DataRequester.swift in Sources */,
 				9D6EA3871ABDBB8800245E01 /* SignInManager.swift in Sources */,
 				9D6409EA1AAE798F00D94B5E /* AppDelegate.swift in Sources */,
 				9DA4E4FD1AB484E200107743 /* Course.swift in Sources */,
