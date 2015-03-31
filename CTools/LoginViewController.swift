@@ -38,7 +38,8 @@ class LoginViewController: UIViewController {
             return
         }
         
-        NSLog("we found the shit")
+        NSLog(cosign! as NSString)
+        NSLog(cosignCtools! as NSString)
         // see whether request works as well
         
         makeRequest(cosignBlah: cosign!, cosignCtoolsBlah: cosignCtools!);
@@ -46,8 +47,8 @@ class LoginViewController: UIViewController {
     
     func makeRequest (#cosignBlah: NSString, cosignCtoolsBlah: NSString) {
         var cookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-        let url = NSURL(string: "https://ctools.umich.edu/direct/site.json")
-        let request = NSURLRequest(URL: url!)
+        let url = NSURL(string: "https://ctools.umich.edu/direct/mycourses/all-courses.json")
+        let request = NSMutableURLRequest(URL: url!)
         
         // make cookie
         var cookie = NSHTTPCookie(properties: [NSHTTPCookiePath:"/",
@@ -55,18 +56,19 @@ class LoginViewController: UIViewController {
             NSHTTPCookieValue:cosignBlah,NSHTTPCookieSecure:true])
         
         cookieStorage.setCookie(cookie!)
-        request.setValue(cookie!, forKey: "cosign")
+        //request.setValue(NSString(format:cookie), forHTTPHeaderField: "Cookie")
         
         cookie = NSHTTPCookie(properties: [NSHTTPCookiePath:"/",
             NSHTTPCookieDomain:"ctools.umich.edu",NSHTTPCookieName:"cosign-ctools",
             NSHTTPCookieValue:cosignCtoolsBlah,NSHTTPCookieSecure:true])
         
         cookieStorage.setCookie(cookie!)
-        request.setValue(cookie!, forKey: "cosign-ctools")
+        //request.setValue(cookie!, forKey: "cosign-ctools")
         
         // throw that shit at the server mofo
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            println("END OF DATA !!!")
         }
     }
     
@@ -93,7 +95,7 @@ class LoginViewController: UIViewController {
         var cookies = cookieJar.cookiesForURL(url!)
         
         for cookie in cookies as [NSHTTPCookie] {
-            if cookie.name == name {return cookie.name;}
+            if cookie.name == name {return cookie.value;}
         }
         
         return nil

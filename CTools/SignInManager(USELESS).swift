@@ -29,26 +29,24 @@ class SignInManager {
             return;
         }
         
-        /*var properties = [NSHTTPCookieDomain:"weblogin.umich.edu",
+        /*var props = [NSHTTPCookieDomain:"weblogin.umich.edu",
             NSHTTPCookieName:"cosign",
             NSHTTPCookieValue:cosign,
             NSHTTPCookiePath:"/",
-            NSHTTPCookieSecure:true
-            ]
+            NSHTTPCookieSecure:true,]
         
-        var cookie = NSHTTPCookie(properties: properties)
+        var cookie = NSHTTPCookie(properties: props!)
         
-        storage.setCookie(cookie)
+        storage.setCookie(cookie!)
         
-        properties = [NSHTTPCookieDomain:"ctools.umich.edu",
+        props = [NSHTTPCookieDomain:"ctools.umich.edu",
             NSHTTPCookieName:"cosign-ctools",
             NSHTTPCookieValue:ctoolsCosign,
             NSHTTPCookiePath:"/",
-            NSHTTPCookieSecure:true,
-        ]
+            NSHTTPCookieSecure:true,]
         
-        cookie = NSHTTPCookie(properties: properties)
+        cookie = NSHTTPCookie(properties: props)!
         
-        storage.setCookie(cookie)*/
+        storage.setCookie(cookie!)*/
     }
 }
