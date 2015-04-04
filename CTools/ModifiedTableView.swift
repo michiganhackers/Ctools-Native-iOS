@@ -11,10 +11,10 @@ import UIKit
 class ModifiedTableView: UITableViewController {
     
     @IBAction func unwindFromCourseSelection (segue: UIStoryboardSegue) {
-    
+        println("hihi")
     }
     
     @IBAction func unwindFromLoginWebView (segue: UIStoryboardSegue) {
-        
+        println("hihi")
     }
 }
