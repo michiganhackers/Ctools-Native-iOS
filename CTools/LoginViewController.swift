@@ -68,6 +68,9 @@ class LoginViewController: UIViewController {
         // throw that shit at the server mofo
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            var err: NSError?
+            var theJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSMutableDictionary
+            println(theJSON["entityPrefix"] as String)
             println("END OF DATA !!!")
         }
     }
