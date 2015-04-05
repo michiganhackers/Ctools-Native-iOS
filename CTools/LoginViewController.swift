@@ -56,18 +56,16 @@ class LoginViewController: UIViewController {
             NSHTTPCookieValue:cosignBlah,NSHTTPCookieSecure:true])
         
         cookieStorage.setCookie(cookie!)
-        //request.setValue(NSString(format:cookie), forHTTPHeaderField: "Cookie")
         
         cookie = NSHTTPCookie(properties: [NSHTTPCookiePath:"/",
             NSHTTPCookieDomain:"ctools.umich.edu",NSHTTPCookieName:"cosign-ctools",
             NSHTTPCookieValue:cosignCtoolsBlah,NSHTTPCookieSecure:true])
         
         cookieStorage.setCookie(cookie!)
-        //request.setValue(cookie!, forKey: "cosign-ctools")
         
         // throw that shit at the server mofo
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            println(NSString(data: data, encoding: NSUTF8StringEncoding)!)
             println("END OF DATA !!!")
         }
     }
