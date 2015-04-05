@@ -68,6 +68,7 @@ class LoginViewController: UIViewController {
             println(NSString(data: data, encoding: NSUTF8StringEncoding)!)
             println("END OF DATA !!!")
         }
+        // some buggy stuff might happen
     }
     
     func storeKeys () {
