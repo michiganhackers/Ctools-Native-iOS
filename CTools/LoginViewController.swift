@@ -33,13 +33,13 @@ class LoginViewController: UIViewController {
         var cosignCtools = def.stringForKey(cToolsCosignKey)
         
         if (cosign == nil || cosignCtools == nil) {
-            NSLog("store first time bitch!")
+            NSLog("store first time!")
             storeKeys()
             return
         }
         
-        NSLog(cosign! as NSString)
-        NSLog(cosignCtools! as NSString)
+        NSLog(cosign! as NSString as String)
+        NSLog(cosignCtools! as NSString as String)
         // see whether request works as well
         
         makeRequest(cosignBlah: cosign!, cosignCtoolsBlah: cosignCtools!);
@@ -65,7 +65,10 @@ class LoginViewController: UIViewController {
         
         // throw that shit at the server mofo
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            println(NSString(data: data, encoding: NSUTF8StringEncoding)!)
+            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            var err: NSError?
+            var theJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSMutableDictionary
+            println(theJSON["entityPrefix"] as! String)
             println("END OF DATA !!!")
         }
         // some buggy stuff might happen
@@ -90,10 +93,10 @@ class LoginViewController: UIViewController {
     func getCookieValue (domain: NSString, name: NSString) -> NSString? {
         
         var cookieJar = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-        var url = NSURL(string: domain)
+        var url = NSURL(string: domain as String)
         var cookies = cookieJar.cookiesForURL(url!)
         
-        for cookie in cookies as [NSHTTPCookie] {
+        for cookie in cookies as! [NSHTTPCookie] {
             if cookie.name == name {return cookie.value;}
         }
         

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 ameyakhare. All rights reserved.
 //
 
-import UIKIT
+import UIKit
 
 class Course {
     var name:String;
