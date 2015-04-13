@@ -38,7 +38,6 @@ class CourseViewController: UITableViewController, UITableViewDelegate {
         let nmbr: AnyObject? = course["catalog_nbr"]!
         let comp: AnyObject? = course["component"]!
         cell.textLabel!.text = "\(subject!) \(nmbr!) (\(comp!))"
-        //cell.detailTextLabel!.text = "\(detail)"
         
         return cell
     }
