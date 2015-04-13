@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet var webView: UIWebView!
     
     let cosignKey = "LoginCosignKey"
@@ -17,32 +17,31 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = NSURL(string: "https://ctools.umich.edu/sakai-login-tool/container")
-        NSLog("%@", url!)
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
-        
-        //var cookieJar = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        webView.delegate = self
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        let targetURL = NSURL(string: "https://ctools.umich.edu/portal")
         
-        var def = NSUserDefaults.standardUserDefaults()
-        var cookieJar = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-        
-        var cosign = def.stringForKey(cosignKey)
-        var cosignCtools = def.stringForKey(cToolsCosignKey)
-        
-        if (cosign == nil || cosignCtools == nil) {
-            NSLog("store first time!")
-            storeKeys()
-            return
+        if (request.URL! == targetURL) {
+            var def = NSUserDefaults.standardUserDefaults()
+            var cookieJar = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+            
+            var cosign = def.stringForKey(cosignKey)
+            var cosignCtools = def.stringForKey(cToolsCosignKey)
+            
+            LoginManager.storeKeys()
+            
+            dismissViewControllerAnimated(true, completion: nil)
         }
         
-        NSLog(cosign! as NSString as String)
-        NSLog(cosignCtools! as NSString as String)
-        // see whether request works as well
-        
-        makeRequest(cosignBlah: cosign!, cosignCtoolsBlah: cosignCtools!);
+        return true
+    }
+    
+    @IBAction func cancel(sender: AnyObject?) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func makeRequest (#cosignBlah: NSString, cosignCtoolsBlah: NSString) {
@@ -69,37 +68,12 @@ class LoginViewController: UIViewController {
             var err: NSError?
             var theJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSMutableDictionary
             println(theJSON["entityPrefix"] as! String)
-            println("END OF DATA !!!")
+            for course in theJSON["mycourses_collection"] as! NSArray {
+                let subject = course["subject"]!
+                let nmbr = course["catalog_nbr"]!
+                println("\(subject!) \(nmbr!)")
+            }
         }
         // some buggy stuff might happen
-    }
-    
-    func storeKeys () {
-        NSLog("storing now")
-        var def = NSUserDefaults.standardUserDefaults()
-        
-        // check whether they even exist
-        
-        var cosign = getCookieValue("https://weblogin.umich.edu", name: "cosign")
-        var cosignCtools = getCookieValue("https://ctools.umich.edu", name: "cosign-ctools")
-        
-        if (cosign == nil || cosignCtools == nil) {NSLog("user did not log in"); return}
-        
-        def.setObject(cosign, forKey: cosignKey)
-        def.setObject(cosignCtools, forKey: cToolsCosignKey)
-        def.synchronize()
-    }
-    
-    func getCookieValue (domain: NSString, name: NSString) -> NSString? {
-        
-        var cookieJar = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-        var url = NSURL(string: domain as String)
-        var cookies = cookieJar.cookiesForURL(url!)
-        
-        for cookie in cookies as! [NSHTTPCookie] {
-            if cookie.name == name {return cookie.value;}
-        }
-        
-        return nil
     }
 }

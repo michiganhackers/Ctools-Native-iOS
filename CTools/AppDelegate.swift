@@ -13,9 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let cosignKey = "LoginCosignKey"
+    let cToolsCosignKey = "LoginCToolsCosignKey"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        var def = NSUserDefaults.standardUserDefaults()
+        var cookieJar = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        
+        var cosign = def.stringForKey(cosignKey)
+        var cosignCtools = def.stringForKey(cToolsCosignKey)
+        
+        if (cosign == nil || cosignCtools == nil) {return true}
+        
+        LoginManager.storeCookies(cosignValue: cosign!, cosignCtoolsValue: cosignCtools!)
+        
         return true
     }
 

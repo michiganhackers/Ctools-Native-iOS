@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vtA-fJ-fpD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vtA-fJ-fpD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -30,7 +30,7 @@
         <!--Announcements-->
         <scene sceneID="e1N-f3-vYT">
             <objects>
-                <tableViewController id="KOr-y6-oTE" userLabel="Announcements" customClass="ModifiedTableView" customModule="CTools" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="KOr-y6-oTE" userLabel="Announcements" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zAq-YK-fpL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,7 @@
         <!--Resources-->
         <scene sceneID="Kjk-hB-laD">
             <objects>
-                <tableViewController id="DL5-mX-m8K" userLabel="Resources" customClass="ModifiedTableView" customModule="CTools" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DL5-mX-m8K" userLabel="Resources" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tFf-PC-IBc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,13 +106,13 @@
         <!--Course Selection-->
         <scene sceneID="jl4-fO-Hpo">
             <objects>
-                <tableViewController id="OCr-Nc-7y3" userLabel="Course Selection" sceneMemberID="viewController">
+                <tableViewController id="OCr-Nc-7y3" userLabel="Course Selection" customClass="CourseViewController" customModule="CTools" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yQ8-2D-klJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BYn-nr-cjg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" id="BYn-nr-cjg">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BYn-nr-cjg" id="0XI-so-hQq">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -124,16 +124,15 @@
                             <outlet property="delegate" destination="OCr-Nc-7y3" id="cPT-WQ-1J6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="MCI-Hm-K2M">
+                    <navigationItem key="navigationItem" title="Courses" id="MCI-Hm-K2M">
                         <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="Y5s-Lk-jDu">
                             <connections>
-                                <segue destination="ALl-q6-Ypd" kind="unwind" unwindAction="unwindFromCourseSelection:" id="nOk-FD-wlb"/>
+                                <action selector="cancel:" destination="OCr-Nc-7y3" id="sbB-QZ-cHg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwP-AE-qUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ALl-q6-Ypd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4064" y="-183"/>
         </scene>
@@ -163,9 +162,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U83-Vf-1NQ">
-                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="FJA-SN-dbY">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="FJA-SN-dbY">
                             <connections>
-                                <segue destination="YT7-l8-gQC" kind="unwind" unwindAction="unwindFromLoginWebView:" id="bQO-gJ-li7"/>
+                                <action selector="cancel:" destination="cJJ-z9-aJX" id="FmQ-e4-fma"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -174,7 +173,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTc-XV-Kr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="YT7-l8-gQC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4064" y="545"/>
         </scene>
@@ -197,7 +195,7 @@
         <!--Gradebook-->
         <scene sceneID="qkx-Dz-e8r">
             <objects>
-                <tableViewController id="z2b-0t-2kd" userLabel="Gradebook" customClass="ModifiedTableView" customModule="CTools" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="z2b-0t-2kd" userLabel="Gradebook" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ddf-uQ-ugu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,7 +233,7 @@
         <!--Calendar-->
         <scene sceneID="zIW-px-hJc">
             <objects>
-                <tableViewController id="qTP-pF-Bem" userLabel="Calendar" customClass="ModifiedTableView" customModule="CTools" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qTP-pF-Bem" userLabel="Calendar" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bko-QT-pdd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

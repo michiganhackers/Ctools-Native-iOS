@@ -19,6 +19,6 @@ class CourseManager {
         courseList.append(blah2)
     }
     
-    // this is where you will do all the initialization bullshit and what not
+    // this is where you will do all the initialization stuff and what not
     // based on class passed in and what not
 }
